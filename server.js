@@ -14,7 +14,9 @@ app.get("/gamepad", function(req, res) {
   res.sendfile(__dirname + "/gamepad.html");
 });
 
-app.get('/gui', function() {
+app.use(express.static('public'));
+
+app.get('/gui', function(req, res) {
   res.sendfile(__dirname + '/GUI.html');
 });
 
