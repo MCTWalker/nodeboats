@@ -14,6 +14,10 @@ app.get("/gamepad", function(req, res) {
   res.sendfile(__dirname + "/gamepad.html");
 });
 
+app.get('/gui', function() {
+  res.sendfile(__dirname + '/GUI.html');
+});
+
 io.on("connection", function(socket) {
   socket.emit("hello", { hello: "world" });
 
