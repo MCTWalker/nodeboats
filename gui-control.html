@@ -1,0 +1,51 @@
+
+<body>
+<style>
+  html, body {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+  }
+  .flex-container {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .row {
+    width: 100%;
+    position: relative;
+    flex: 1;
+  }
+  .flex-item {
+    padding: 100px;
+    margin: auto;
+    flex: 1
+  }
+  .empty {
+
+  }
+</style>
+<script>
+
+</script>
+
+  <div class="flex-container">
+    <div>
+      <button class="flex-item top">Forward</button>
+
+
+    </div>
+    <div>
+      <button class="flex-item">Left</button>
+      <div class="empty"></div>
+      <button class="flex-item">Right</button>
+    </div>
+    <div>
+      <button class="flex-item">Backward</button>
+    </div>
+  </div>
+</body>
+

@@ -41,14 +41,14 @@
 <body>
 <div class="wrapper">
 <div class="container up-down">
-  <button class="flex-item forward">FORWARD</button>
-  <button class="flex-item backward">BACKWARD</button>
-  <button class="flex-item stop">STOP</button>
+  <button class="flex-item forward" onkeydown="moveForward()">FORWARD</button>
+  <button class="flex-item backward" onkeydown="moveBackward()" onkeyup="resumeForward()">BACKWARD</button>
+  <button class="flex-item stop" onkeydown="stop()"  onkeyup="resumeForward()">STOP</button>
 
 </div>
 <div class="container left-right">
-  <button class="flex-item left">LEFT</button>
-  <button class="flex-item right">RIGHT</button>
+  <button class="flex-item left"  onkeydown="moveLeft()" onkeyup="resumeForward()">LEFT</button>
+  <button class="flex-item right" onkeydown="moveRight()" onkeyup="resumeForward()">RIGHT</button>
 </div>
 
 </div>
@@ -56,6 +56,27 @@
 
 <script>
     console.log(axios);
+</script>
+<script>
+  function moveRight(){
+    console.log('moveRight');
+    axios.get('/moveRight');
+  }
+  function moveLeft() {
+    axios.get('/moveLeft');
+  }
+  function moveForward() {
+    axios.get('/moveForward');
+  }
+  function moveBackward() {
+    axios.get('/moveBackward');
+  }
+  function resumeForward() {
+    axios.get('/moveForward');
+  }
+  function stop() {
+    axios.get('/stop');
+  }
 </script>
 </body>
 
