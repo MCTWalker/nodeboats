@@ -1,34 +1,56 @@
 <!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <html>
 <head>
     <style>
-        .container {
-            width:400px;
-            display: flex;
-            margin: auto;
+      .container {
+        display: flex;
+        margin: auto;
         }
-
         .flex-item {
-            max-width: 133px;
-            height: 100px;
-            display: flex;
-            flex: 1;
-            margin: auto;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
+          width: 100px;
+          height: 100px;
+          background-color: lightgrey;
+          display: flex;
+          flex: 1;
+          box-shadow: grey;
+          align-items: center;
+          justify-content: center;
+        }
+        .flex-item:active, .flex-item:focus {
+          outline: none;
+        }
+        .up-down {
+          flex-direction: column;
+          display: inline-block;
+        }
+        .backward {
+          marign-bottom: 20px !important;
+        }
+        .left-right {
+          display: inline-block;
+          float: right;
+          margin-top: 100px;
+        }
+        .left, .right {
+          display: inline-block;
         }
     </style>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-<div class="container">
-    <button class="flex-item top-">Forward</button>
+<div class="wrapper">
+<div class="container up-down">
+  <button class="flex-item forward">FORWARD</button>
+  <button class="flex-item backward">BACKWARD</button>
+  <button class="flex-item stop">STOP</button>
+
 </div>
-<div class="container">
-    <button class="flex-item">Left</button>
-    <button class="flex-item">Backward</button>
-    <button class="flex-item">Right</button>
+<div class="container left-right">
+  <button class="flex-item left">LEFT</button>
+  <button class="flex-item right">RIGHT</button>
+</div>
+
 </div>
 
 
@@ -38,5 +60,3 @@
 </body>
 
 </html>
-
-
